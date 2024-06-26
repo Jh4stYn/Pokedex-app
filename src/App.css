@@ -1,0 +1,66 @@
+/* ----- reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+select{
+  height: 30px;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: -1px 1.5px 3px #c7c7c7;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: #D93F3F;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+input,
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline block;
+}
+
+.app {
+  height: 100%;
+}
+
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}

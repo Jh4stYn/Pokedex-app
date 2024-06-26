@@ -1,0 +1,45 @@
+.homepage {
+    height: 100vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.homepage__logo {
+    max-width: 700px;
+}
+.homepage__h2 {
+    margin-top: 40px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FE1936;
+    text-align: center;
+}
+
+.homepage__p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    text-align: center;
+}
+
+.homepage__form {
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.homepage__form button {
+    width: 60px;
+    height: 30px;
+}
+
+.homepage__form input {
+    width: 80%;
+    max-width: 300px;
+}

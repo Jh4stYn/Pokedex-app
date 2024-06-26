@@ -1,0 +1,96 @@
+.pokeheader {
+    width: 100%;
+    position: relative;
+}
+
+.pokeheader__red {
+    background-color: #ff0000;
+    height: 65px;
+}
+
+.pokeheader__img {
+    width: 65%;
+    max-width: 350px;
+    position: absolute;
+    left: 5%;
+    top: 13px;
+    z-index: 1;
+}
+
+.pokeheader__black {
+    position: relative;
+    background-color: #000;
+    height: 30px;
+}
+
+.pokeheader__outcircle {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: 0.9rem solid #000;
+    border-radius: 50%;
+    width: 18%;
+    max-width: 100px;
+    aspect-ratio: 1;
+}
+
+.pokeheader__incircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #212121;
+    border: 0.6rem solid #000000;
+    border-radius: 50%;
+    width: 50%;
+    max-width: 50px;
+    aspect-ratio: 1;
+}
+
+@media (width < 430px) {
+    .pokeheader__red {
+        height: 50px;
+    }
+
+    .pokeheader__black {
+        height: 25px;
+    }
+
+    .pokeheader__img {
+        top: 19px;
+    }
+
+    .pokeheader__outcircle {
+        border: 0.6rem solid #000;
+        width: 18%;
+    }
+
+    .pokeheader__incircle {
+        border: 0.4rem solid #000;
+    }
+}
+
+@media ( 430px <= width <= 550px) {
+    .pokeheader__red {
+        height: 50px;
+    }
+
+    .pokeheader__black {
+        height: 25px;
+    }
+
+    .pokeheader__img {
+        top: 10px;
+    }
+
+    .pokeheader__outcircle {
+        border: 0.6rem solid #000;
+        width: 18%;
+    }
+
+    .pokeheader__incircle {
+        border: 0.4rem solid #000;
+    }
+}
