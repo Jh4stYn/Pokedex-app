@@ -39,13 +39,18 @@
 
 .pokedex__form-number {
     margin: auto;
-    padding: 10px;
+    min-width: 250px;
+    display: flex;
 }
 
 .pokedex__form-number input {
     width: 150px;
     height: 50px;
 }
+.pokedex__form-number button {
+    width: 70px;
+}
+
 
 .pokedex__container {
     width: 85%;
