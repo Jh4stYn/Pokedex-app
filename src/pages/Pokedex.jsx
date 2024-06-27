@@ -4,23 +4,26 @@ import useFetch from '../hooks/useFetch'
 import PokeCard from '../components/pokedex/PokeCard'
 import PokeSelect from '../components/pokedex/PokeSelect'
 import './styles/pokedex.css'
+import Paginate from '../components/pokedex/Paginate'
 
 const Pokedex = () => {
     const trainer = useSelector(store => store.trainer)
     const [inputValue, setInputValue] = useState('')
+    const [numberValue, setNumberValue] = useState('8')
+    const [page, setPage] = useState(1)
     const [typeFilter, setTypeFilter] = useState('')
     const [pokemons, getPokemons, getTypes] = useFetch()
-    const textInput = useRef()
     
     useEffect(() => {
         if (typeFilter) {
             getTypes(typeFilter)
-            } else {
-            const url = 'https://pokeapi.co/api/v2/pokemon/?limit=12'
+        } else {
+            const url = `https://pokeapi.co/api/v2/pokemon/?limit=1302`
             getPokemons(url)
         }
-    }, [typeFilter])
-
+    }, [typeFilter, numberValue])
+    
+    const textInput = useRef()
     const handleSubmit = (event) => {
         event.preventDefault()
         setInputValue(textInput.current.value.trim(). toLowerCase())
@@ -30,6 +33,23 @@ const Pokedex = () => {
     const cbFilter = poke => {
         return poke.name.includes(inputValue)
     }
+
+    const numberInput = useRef()
+    const handleSubmitNumber = (event) => {
+        event.preventDefault()
+        setNumberValue(numberInput.current.value)
+        numberInput.current.value = ''
+    }
+    
+    const totalPages = Math.ceil(pokemons?.results.filter(cbFilter).length / numberValue)
+    const pagination = () => {
+        const end = numberValue * page
+        const start = end - numberValue
+        const poke = pokemons?.results.filter(cbFilter).slice(start, end)
+        return [poke]
+    }
+    
+    console.log(pokemons?.results.filter(cbFilter).length)
 
     return (
         <div className='pokedex'>
@@ -43,10 +63,14 @@ const Pokedex = () => {
                     setTypeFilter={setTypeFilter}
                     setInputValue={setInputValue}
                 />
+                <form className='pokedex__form-number' onSubmit={handleSubmitNumber}>
+                    <input ref={numberInput} type="number" placeholder='N° Pokemons'/>
+                    <button>Go</button>
+                </form>
             </div>
             <div className='pokedex__container'>
                 {
-                    pokemons?.results.filter(cbFilter).map(poke => (
+                    pagination()[0]?.map(poke => (
                         <PokeCard
                             key={poke.url}
                             url={poke.url}
@@ -54,6 +78,11 @@ const Pokedex = () => {
                     ))
                 }
             </div>
+            <Paginate
+                page={page}
+                setPage={setPage}
+                totalPages={totalPages}
+            />
         </div>
     )
 }

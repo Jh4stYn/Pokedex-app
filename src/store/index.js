@@ -3,7 +3,7 @@ import trainer from "./slices/trainer.slice";
 
 const store = configureStore({
     reducer: {
-        trainer
+        trainer,
     }
 })
 

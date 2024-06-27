@@ -1,4 +1,11 @@
 .pokeinfo {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.pokeinfo__container {
     width: 90%;
     min-height: 100vh;
     margin: 0 auto; 
@@ -72,6 +79,7 @@
     position: absolute; 
     text-transform: capitalize;
     font-size: 2.5rem;
+    font-weight: 600;
     left: 50%; 
     transform: translate(-50%, -50%); 
     background-color: #ffffff; 
@@ -79,7 +87,6 @@
 }
 
 .pokeinfo__data {
-    font-size: 1.3rem;
     padding: 30px 0;
     display: flex;
     justify-content: center;
@@ -93,16 +100,28 @@
     gap: 5px;
 }
 
+.pokeinfo__data span:first-child {
+    color: #4a4d4e;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 .pokeinfo__data span:last-child {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
 .pokeinfo__moredata {
+    padding: 0 20px ;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 25px 40px;
+}
+
+.pokeinfo__moredata span {
+    color: #011117f5;
+    font-weight: 700;
 }
 
 .pokeinfo__types {
@@ -115,7 +134,10 @@
 }
 
 .pokeinfo__type {
+    padding-top: 15px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;    
 }
 
@@ -123,14 +145,15 @@
     color: #fff;
     padding: 5px;
     font-size: 1.1rem;
+    font-weight: 700;
     text-transform: capitalize;
     text-align: center;
+    min-width: 150px;
     width: 100px;
 }
 
 .pokeinfo__skills {
     font-size: 1.3rem;
-    padding: 0 0 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +162,10 @@
 }
 
 .pokeinfo__skill {
+    padding-top: 15px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -148,22 +174,24 @@
     padding: 5px 0;
     margin: 0 5px;
     font-size: 1.1rem;
+    font-weight: 550;
     text-transform: capitalize;
     text-align: center;
-    width: 100px;
+    min-width: 150px;
     box-shadow: 0 0 5px #c7c7c7;
 }
 
 .pokeinfo__title-stats {
+    position: relative;
     width: 90%;
-    padding: 50px 0 0;
-    margin: 30px auto 0;
+    margin-top: 70px;
 }
 
 .pokeinfo__title-stats hr {
+    position: relative;
+    left: 25%;
     border: none; 
     border-bottom: 1.5px solid #bebebe; 
-    margin: 0 auto; 
     width: 60%;
 }
 
@@ -173,11 +201,13 @@
     position: relative;
     transform: translate(-50%, -50%);
     left: 89%;
-    height: 15vh;
+    height: 13vh;
+    max-height: 100px;
 }
 
 .stats {
     position: absolute; 
+    font-weight: 600;
     text-transform: capitalize;
     font-size: 2.5rem;
     left: 22vw; 
@@ -187,10 +217,16 @@
 }
 
 .pokeinfo__backBottom {
+    position: relative;
+    top: -45px;
     padding: 0 8vw 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .pokeinfo__stats-item {
+    text-transform: capitalize;
+    font-weight: 600;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -214,75 +250,265 @@
     height: 100%;
 }
 
-/* ----- Colors ----- */
-.bug {
-    background: linear-gradient( #00e80c, #f0ff65);
+.movements__container {
+    width: 90%;
+    height: 100%;
+    margin: 40px auto 30px; 
+    border: 2px solid #ddd; 
+    border-radius: 5px; 
+    border-top: none;
+    overflow: hidden; 
+    box-shadow: 0 0 10px #00000045; 
 }
 
-.dark {
+.movements__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px 25px;
+}
+
+.movements__title {
+    position: relative;
+    margin: 70px 140px;
+}
+
+.movements {
+    position: absolute; 
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    transform: translate(-50%, -50%); 
+    background-color: #ffffff; 
+    padding: 0 15px 0 0;
+}
+
+.movements__title hr {
+    position: relative;
+    padding: 20px;
+    left: 15%;
+    border: none; 
+    border-bottom: 1.5px solid #bebebe; 
+    width: 90%;
+}
+
+.movements__list {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.movements__list-item{
+    background-color: #e3dfdf;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+/* ----- Colors ----- */
+
+/*-- BUG --*/
+.pokeinfo__back.bug {
+    background: linear-gradient(#6cfb06, #f0ff65);
+}
+.pokeinfo__type-item.bug {
+    background: #91fb06;
+} 
+.pokeinfo__name.bug {
+    color: #79e505;
+}
+
+/*-- DARK --*/
+.pokeinfo__back.dark {
     background: linear-gradient( #030f12, #5a5881);
 }
+.pokeinfo__type-item.dark {
+    background: #252341; 
+}
+.pokeinfo__name.dark {
+    color: #030f12;
+}
 
-.dragon {
+/*-- DRAGON --*/
+.pokeinfo__back.dragon {
     background: linear-gradient( #0094a7, #7ee6f4);
 }
+.pokeinfo__type-item.dragon {
+    background: #25a7b9; 
+}
+.pokeinfo__name.dragon {
+    color: #0094a7;
+}
 
-.electric {
+/*-- ELECTRIC --*/
+.pokeinfo__back.electric {
     background: linear-gradient( #00f7ff78, #e0fd06);
 }
+.pokeinfo__type-item.electric {
+    background: #e7fc4a; 
+}
+.pokeinfo__name.electric {
+    color: #daf700;
+}
 
-.fairy {
+/*-- FAIRY --*/
+.pokeinfo__back.fairy {
     background: linear-gradient( #e6225df3, #ee70bcd7);
 }
+.pokeinfo__type-item.fairy {
+    background: #f72d7e; 
+} 
+.pokeinfo__name.fairy {
+    color: #e6225df3;
+}
 
-.fighting {
+/*-- FIGHTING --*/
+.pokeinfo__back.fighting {
     background: linear-gradient( #b23110, #ff6e4a);
 }
+.pokeinfo__type-item.fighting {
+    background: #ca2b2b; 
+} 
+.pokeinfo__name.fighting {
+    color: #b23110;
+}
 
-.fire {
+/*-- FIRE --*/
+.pokeinfo__back.fire {
     background: linear-gradient(#da0408, #f8aa56 );
 }
+.pokeinfo__type-item.fire {
+    background: #ea7a0a; 
+} 
+.pokeinfo__name.fire {
+    color: #f89d09;
+}
 
-.flying {
+/*-- FLYING --*/
+.pokeinfo__back.flying {
     background: linear-gradient(#4D6C81, #a8d1f4);
 }
+.pokeinfo__type-item.flying {
+    background: #5e89a5; 
+} 
+.pokeinfo__name.flying {
+    color: #4D6C81;
+}
 
-.ghost {
+/*-- GHOST --*/
+.pokeinfo__back.ghost {
     background: linear-gradient(#33336C, #a977ad);
 }
+.pokeinfo__type-item.ghost {
+    background: #46467e; 
+} 
+.pokeinfo__name.ghost {
+    color: #33336C;
+}
 
-.grass {
+/*-- GRASS --*/
+.pokeinfo__back.grass {
     background: linear-gradient(#16c902, #07b7c4bd);
 }
+.pokeinfo__type-item.grass {
+    background: #04bb7e; 
+}
+.pokeinfo__name.grass {
+    color: #07ca89;
+}
 
-.ground {
+/*-- GROUND --*/
+.pokeinfo__back.ground {
     background: linear-gradient(#724C1F, #d3b549);
 }
+.pokeinfo__type-item.ground {
+    background: #996a31; 
+} 
+.pokeinfo__name.ground {
+    color: #724C1F;
+}
 
-.ice {
+/*-- ICE --*/
+.pokeinfo__back.ice {
     background: linear-gradient(#0091ffdb, #00fff26e);
 }
+.pokeinfo__type-item.ice {
+    background: #42e7eadb; 
+} 
+.pokeinfo__name.ice {
+    color: #02ded3da;
+}
 
-.normal {
+/*-- NORMAL --*/
+.pokeinfo__back.normal {
     background: linear-gradient(#8a4553, #dda6b4);
 }
+.pokeinfo__type-item.normal {
+    background: #b15f70; 
+}
+.pokeinfo__name.normal {
+    color: #8a4553;
+}
 
-.poison {
+/*-- POISON --*/
+.pokeinfo__back.poison {
     background: linear-gradient(#673796, #bd79fd);
 }
+.pokeinfo__type-item.poison {
+    background: #5d2893; 
+} 
+.pokeinfo__name.poison {
+    color: #673796;
+}
 
-.psychic {
+/*-- PSYCHIC --*/
+.pokeinfo__back.psychic {
     background: linear-gradient(#de0173, #61e4e2cc);
 }
+.pokeinfo__type-item.psychic {
+    background: #b51d6c; 
+} 
+.pokeinfo__name.psychic {
+    color: #de0173;
+}
 
-.rock {
+
+/*-- ROCK --*/
+.pokeinfo__back.rock {
     background: linear-gradient(#615c5c, #bfb9b7);
 }
+.pokeinfo__type-item.rock {
+    background: #7d7a7a; 
+} 
+.pokeinfo__name.rock {
+    color: #615c5c;
+}
 
-.steel {
+
+/*-- STEEL --*/
+.pokeinfo__back.steel {
     background: linear-gradient(#475c55e9, #7db1a1eb);
 }
+.pokeinfo__type-item.steel {
+    background: #5a796fe9; 
+} 
+.pokeinfo__name.steel {
+    color: #475c55e9;
+}
 
-.water {
+
+/*-- WATER --*/
+.pokeinfo__back.water {
     background: linear-gradient(#3affff96, #011164);
 }
+.pokeinfo__type-item.water {
+    background: #29aee7; 
+} 
+.pokeinfo__name.water {
+    color: #33b5ec;
+} 

@@ -1,3 +1,7 @@
+.pokedex {
+    min-height: 100vh;
+}
+
 .pokedex__wave {
     font-size: 1.8rem;
     padding: 40px 40px 10px;
@@ -31,6 +35,16 @@
 
 .pokedex__form button {
     width: 150px;
+}
+
+.pokedex__form-number {
+    margin: auto;
+    padding: 10px;
+}
+
+.pokedex__form-number input {
+    width: 150px;
+    height: 50px;
 }
 
 .pokedex__container {

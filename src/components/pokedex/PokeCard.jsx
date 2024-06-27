@@ -23,7 +23,7 @@ const PokeCard = ({url}) => {
                 <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="pokemon img" />
             </figure>
             <div className='pokecard__backBottom'>
-                <h3 className='pokecard__name'>{pokemon?.name}</h3>
+                <h3 className={`pokecard__name ${pokemon?.types[0].type.name}`}>{pokemon?.name}</h3>
                 <ul className='pokecard__types'>
                     {
                         pokemon?.types.map(type => (
@@ -41,7 +41,7 @@ const PokeCard = ({url}) => {
                             !stat.stat.name.includes('special') &&
                             <li key={stat.stat.url}>
                                 <span>{stat.stat.name}</span>
-                                <span>{stat.base_stat}</span>
+                                <span className={`pokecard__stats-char ${pokemon?.types[0].type.name}`}>{stat.base_stat}</span>
                             </li>
                         ))
                     }
