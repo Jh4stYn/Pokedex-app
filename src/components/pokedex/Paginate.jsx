@@ -23,12 +23,12 @@ const Paginate = ({ page, setPage, totalPages }) => {
         }
     }
     const selectPage3 = () => {
-        if (page + 2 < totalPages) {
+        if (page + 2 <= totalPages) {
             setPage(page + 2)
         }
     }
     const selectPage4 = () => {
-        if (page + 3 < totalPages) {
+        if (page + 3 <= totalPages) {
             setPage(page + 3)
         }
     }
@@ -55,7 +55,7 @@ const Paginate = ({ page, setPage, totalPages }) => {
                     page + 2 <= totalPages ?
                         <ul className='paginate__inlist'>
                             <li className='paginate__list-page'>    
-                                <a className="paginate__link" onClick={selectPage4}>{page + 2}</a>
+                                <a className="paginate__link" onClick={selectPage3}>{page + 2}</a>
                             </li>
                         </ul>    
                         :
