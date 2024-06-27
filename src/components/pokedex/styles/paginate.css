@@ -16,11 +16,21 @@
 }
 
 .true {
-    background-color: rgb(223, 232, 239);
+    background-color: #dfe8ef;
+}
+
+.paginate__list-page-null {
+    display: none;
 }
 
 .paginate__list {
     min-width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3vw;
+}
+
+.paginate__inlist {
     display: flex;
     justify-content: space-evenly;
     gap: 3vw;
@@ -43,12 +53,12 @@
 
 .paginate__link:active {
     background-color: #D73F3F;
-    color: white;
+    color: #ffffff;
 }
 
 .active {
     background-color: #D73F3F; 
-    color: white; 
+    color: #ffffff; 
 }
 
 @media (width < 480px) {
