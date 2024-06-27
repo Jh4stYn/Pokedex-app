@@ -100,7 +100,7 @@ const PokeInfo = () => {
                     <div >
                         <ul className='movements__list'>
                             {
-                                limitedMoves.map((move) => (
+                                limitedMoves?.map((move) => (
                                     <li className='movements__list-item' key={move.move.url}>
                                         <span>{move.move.name}</span>
                                     </li>
